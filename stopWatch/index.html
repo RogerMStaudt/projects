@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="regionStopWatch">
+        <div class="regionInside">
+            <section class="regionNumber">
+                <h1 id="number">00:59:59</h1>
+            </section>
+            <section class="regionButtons">
+                <div class="buttons">
+                    <button type="button" id="pause" class="button" onclick="pause()">Pause</button>
+                    <button type="button" id="start" class="button" onclick="start()">Start</button>
+                    <button type="button" id="reset" class="button" onclick="reset()">Reset</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
