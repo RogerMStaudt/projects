@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lexend:wght@100..900&family=Sigmar+One&display=swap');
+
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.sigmar-one-regular {
+  font-family: "Sigmar One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.background {
+    background-color: rgb(216, 213, 213);
+    width: 100vw;
+    height: 100vh;
+}
+
+h2 {
+    margin: 0;
+}
+
+.sideBar {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 98vh;
+    padding: 1rem 0 0 2rem;
+    background-color: white;
+    transition: 0.5s;
+}
+
+#titleBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+#titleBar img {
+    width: 1.5rem;
+}
+
+.container {
+    width: 90%;
+}
+
+.pages {
+    text-decoration: none;
+    margin-bottom: 1.2rem;
+}
+
+.close-side-bar:hover {
+    cursor: pointer;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.collapsed {
+    width: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.sideBar, .links, .title, .text {
+    transition: all 0.4s ease;
+}

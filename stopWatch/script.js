@@ -1,6 +1,8 @@
 var elementStopWatchNumber = document.getElementById('number')
-
-var executionTimer;
+var minutChanged = false
+var hourChanged = false
+var dayChanged = false
+var executionTimer
 
 function pause() {
     clearTimeout(executionTimer)
@@ -12,13 +14,17 @@ function start() {
     function addSecond() {
         var stopWatchNumber = elementStopWatchNumber.innerText
 
-        if (getSecond() == '59') {
+        minutChanged = getSecond() == '59' && getMinute() != '59' && getHour() != '24'
+        hourChanged = getMinute() == '59' && getSecond() == '59' && getHour() != '23'
+        dayChanged = getHour() == '23' && getMinute() == '59' && getSecond() == '59'
+
+        if (minutChanged) {
             setStopWatchNumber(getHour(), addZeroInFront(parseInt(getMinute()) + 1), '00')
 
-        } else if (getMinute() == '59') {
+        } else if (hourChanged) {
             setStopWatchNumber(addZeroInFront(parseInt(getHour()) + 1), '00', '00')
 
-        } else if (getHour() == '24') {
+        } else if (dayChanged) {
             setStopWatchNumber('00', '00', '00')
 
         } else {
