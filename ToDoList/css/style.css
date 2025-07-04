@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lexend:wght@100..900&family=Quicksand:wght@300..700&family=Sigmar+One&display=swap');
 
 body {
-    background-color: #E5FCFF;
+    background-color: #ffffff;
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
+    margin: 0;
 }
 
 .containerRegion {
@@ -16,14 +17,11 @@ body {
     display: flex;
     justify-content: center;
 }
+
 .titleText {
     font-size: 2rem;
     font-style: normal;
-    color: #519872;
-}
-
-ul {
-  list-style: none;
+    color: rgb(19, 31, 143);
 }
 
 .sigmar-one-regular {
@@ -38,4 +36,48 @@ ul {
 
 ul {
     padding: 0;
+    list-style: none;
+}
+
+li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    background-color: rgb(198, 211, 240);
+    padding: 0.5rem;
+    border-radius: 2rem;
+}
+
+.checkbox {
+    width: 2.3rem;
+    height: 2rem;
+    border-radius: 50%;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox:checked {
+  background-image: url('/images/check-circle-fill.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  width: 2.3rem;
+  height: 2rem;
+  border-color: rgb(198, 211, 240);
+}
+
+.text {
+    font-size: 1rem;
+    padding: 0.8rem;
+    width: 90%;
+    background-color: transparent;
+    border: none;
+}
+
+i {
+    color: rgb(226, 57, 57);
 }

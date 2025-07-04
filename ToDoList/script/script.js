@@ -30,7 +30,7 @@ function addItem() {
 }
 
 function deleteItem() {
-
+    console.log(list)
 }
     
 function createElement() {
@@ -39,14 +39,17 @@ function createElement() {
     let li = document.createElement('li')
 
     let checkbox = document.createElement('input')
+    checkbox.classList.add('checkbox')
     checkbox.type = "checkbox"
 
     let textField = document.createElement('input')
+    textField.classList.add('text')
     textField.type = "text"
 
     let trashIcon = document.createElement('i')
     trashIcon.classList.add('bi')
     trashIcon.classList.add('bi-trash-fill')
+    trashIcon.setAttribute('onclick', 'deleteItem()')
 
     listRegion.appendChild(li)
 
