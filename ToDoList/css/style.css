@@ -1,83 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lexend:wght@100..900&family=Quicksand:wght@300..700&family=Sigmar+One&display=swap');
 
 body {
-    background-color: #ffffff;
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
     margin: 0;
 }
 
-.containerRegion {
-    width: 30%;
+header {
+   background: #e2e0e0;
+   position: sticky;
+   top: 0;
+   display: flex;
+   padding: 1rem;
 }
 
-.logoRegion {
+h1 {
+    font-size: 2rem;
+}
+
+main {
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.titleText {
-    font-size: 2rem;
-    font-style: normal;
-    color: rgb(19, 31, 143);
+.regionItem {
+    width: 40%;
 }
 
-.sigmar-one-regular {
-  font-family: "Sigmar One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.align {
-    width: 100%;
-}
-
-ul {
-    padding: 0;
-    list-style: none;
-}
-
-li {
+.searchRegion {
+    padding: 1rem 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e0e0;
     align-items: center;
-    margin-bottom: 0.8rem;
-    background-color: rgb(198, 211, 240);
-    padding: 0.5rem;
-    border-radius: 2rem;
 }
 
-.checkbox {
-    width: 2.3rem;
-    height: 2rem;
-    border-radius: 50%;
-    appearance: none;
-    -webkit-appearance: none;
-    background-color: white;
-    outline: none;
+button:hover {
     cursor: pointer;
 }
 
-.checkbox:checked {
-  background-image: url('/images/check-circle-fill.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: auto;
-  width: 2.3rem;
-  height: 2rem;
-  border-color: rgb(198, 211, 240);
+#search {
+    margin-left: 0.5rem;
+    font-size: 16px;
+    width: 70%;
 }
 
-.text {
-    font-size: 1rem;
-    padding: 0.8rem;
-    width: 90%;
-    background-color: transparent;
-    border: none;
+#search:focus {
+   outline: none;
 }
 
-i {
-    color: rgb(226, 57, 57);
+.listRegion {
+    padding: 2rem 0;
+}
+
+li {
+    border: 1px solid #e2e0e0;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.check-text {
+    display: flex;
+    width: 70%;
+}
+
+.text-item {
+    margin-left: 1rem;
+}
+
+.text-item:focus {
+   outline: none;
+}
+
+.icons i {
+    transition: 0.3s;
+    color: #9e9d9d;
+}
+
+.icons i:hover {
+    cursor: pointer;
+    color: #1145f0;
+    transform: scale(1.2);
 }
