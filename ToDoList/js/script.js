@@ -29,20 +29,45 @@ function createTask() {
 }
 
 function deleteTask(id) {
+    task = searchItem(id)
 
+    reorganizeIds(tasks)
 }
 
 function updateTask(id) {
 
 }
 
-createTask()
+function sequenceId() {
+    return tasks[tasks.length - 1].id + 1
+}
+
+function reorganizeIds(list) {
+    if (list.length < 2) {
+        return list
+    } else {
+        pivot = round(list.length / 2)
+        left = []
+        right = []
+
+        for (let i = 0; i < list.length; i++) {
+            if (list[i] < pivot) {
+                left.push(list[i])
+            } else {
+                right.push(list[i])
+            }
+        }
+
+        return reorganizeIds(left) + pivot + reorganizeIds(right)
+    }
+}
 
 function displayTask() {
     for (let i = 0; i < tasks.length; i++) {
         newTask = document.createElement("li")
 
         newTask.textContent = tasks[i].text
+        newTask.id = tasks[i].id
 
         taskRegion.appendChild(newTask)
     }
@@ -50,6 +75,4 @@ function displayTask() {
 
 displayTask()
 
-function sequenceId() {
-    return tasks[length(tasks) - 1].id + 1
-}
+createTask()
