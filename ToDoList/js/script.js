@@ -21,6 +21,7 @@ taskRegion = document.getElementById('task-region')
 function createTask() {
     tasks.push(
         {
+            id: sequenceId(),
             text: '',
             status: 0
         }
@@ -48,3 +49,7 @@ function displayTask() {
 }
 
 displayTask()
+
+function sequenceId() {
+    return tasks[length(tasks) - 1].id + 1
+}
