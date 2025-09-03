@@ -16,7 +16,7 @@ tasks = [
     }
 ]
 
-taskRegion = document.getElementById('task-region')
+const taskRegion = document.getElementById('task-region')
 
 function createTask() {
     tasks.push(
@@ -29,9 +29,17 @@ function createTask() {
 }
 
 function deleteTask(id) {
-    task = searchItem(id)
+    let idNumber = getNumberOfId(id)
 
-    reorganizeIds(tasks)
+    let task = searchItem(idNumber)
+
+    let idList = []
+
+    for (let i = 0; i < list.length; i++) {
+        idList.push[list[i].id]
+    }
+
+    reorganizeIds(idList)
 }
 
 function updateTask(id) {
@@ -39,17 +47,21 @@ function updateTask(id) {
 }
 
 function sequenceId() {
-    return tasks[tasks.length - 1].id + 1
+    if (tasks.length == 0) {
+        return 1
+    } else {
+        return tasks[tasks.length - 1].id + 1
+    }
 }
 
 function reorganizeIds(list) {
     if (list.length < 2) {
         return list
     } else {
-        pivot = round(list.length / 2)
+        pivot = list[Math.round((list.length - 1) / 2)].id
         left = []
         right = []
-
+        
         for (let i = 0; i < list.length; i++) {
             if (list[i] < pivot) {
                 left.push(list[i])
@@ -58,21 +70,37 @@ function reorganizeIds(list) {
             }
         }
 
-        return reorganizeIds(left) + pivot + reorganizeIds(right)
+        return reorganizeIds(left) + [pivot] + reorganizeIds(right)
     }
 }
 
 function displayTask() {
     for (let i = 0; i < tasks.length; i++) {
-        newTask = document.createElement("li")
+        newLi = document.createElement("li")
 
-        newTask.textContent = tasks[i].text
-        newTask.id = tasks[i].id
+        newInput = document.createElement("input")
+        newInput.value = tasks[i].text
+        newInput.id = 'task-' + tasks[i].id
 
-        taskRegion.appendChild(newTask)
+        newButtonEdit = document.createElement("button")
+        newButtonEdit.textContent = 'Edit'
+        newButtonEdit.id = 'edit-' + tasks[i].id
+
+        newButtonDelete = document.createElement("button")
+        newButtonDelete.textContent = 'Delete'
+        newButtonDelete.id = 'delete-' + tasks[i].id
+
+        taskRegion.appendChild(newLi)
+        newLi.appendChild(newInput)
+        newLi.appendChild(newButtonEdit)
+        newLi.appendChild(newButtonDelete)
     }
 }
 
-displayTask()
+function getNumberOfId(id) {
+    tracePosition = id.indexOf("-")
 
-createTask()
+    return Number(id.substring(tracePosition, id.length))
+}
+
+displayTask()
